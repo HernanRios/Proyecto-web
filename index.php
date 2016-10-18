@@ -10,11 +10,20 @@ if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
 }
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
-  case ConfigApp::$ACTION_MOSTRAR_TAREAS:
-    $controller->iniciar();
-    break;
+  case ConfigApp::$ACTION_GUARDAR_CAMPEON:
+  $controller->guardar();
+  break;
+  case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
+  $controller->guardarCategoria();
+  break;
+  case ConfigApp::$ACTION_ABRIR_ABM:
+  $controller->abrir_abm();
+  break;
+  case ConfigApp::$ACTION_ELIMINAR_CAMPEON:
+  $controller->eliminarCampeon();
+  break;
   default:
-    $controller->iniciar();
-    break;
+  $controller->iniciar();
+  break;
 }
 ?>

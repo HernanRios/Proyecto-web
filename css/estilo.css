@@ -1,6 +1,6 @@
 body {
   background-color: #6488A1;
-  background-image: url('../img/circuito.jpg');
+  /*background-image: url('../img/circuito.jpg');*/ 
   background-attachment: fixed;
   background-size: cover;
   -moz-background-size: cover;
@@ -25,7 +25,7 @@ p{
 	float: left;
 	font-family: "Arial", Arial, Sans-serif;
 	color: #B8B8B8;
-	padding: 30px 70px 30px 70px; 
+	padding: 30px 70px 30px 70px;
 	margin-left: 50px;
 	background: rgba(6,19,57,0.7);
 	box-shadow: 10px 10px 5px #010A24;
@@ -71,9 +71,9 @@ h2 {
     font-size: 30px;
     font-family: sans-serif ;
 }
-.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus { 
+.navbar-custom .navbar-nav > li > a:hover, .nav > li > a:focus {
 	text-decoration: none;
-	 background-color: #242424; 
+	 background-color: #242424;
 }
 .navbar-custom .navbar-nav > .active{
 	background-color: green;
@@ -95,24 +95,3 @@ h2 {
 .correccion{
 	padding: 10%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

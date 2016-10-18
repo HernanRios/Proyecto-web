@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-09-27 21:26:39
+/* Smarty version 3.1.30, created on 2016-10-18 16:57:04
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_57eac7ef0a78f4_46361328',
+  'unifunc' => 'content_58063840c4c9f6_39308928',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a688aec39594e576eb472103677902a7481d11a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\header.tpl',
-      1 => 1475001224,
+      1 => 1476479746,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_57eac7ef0a78f4_46361328 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58063840c4c9f6_39308928 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <!-- Esta es la pagina principal, la cual solo contiene el head y una parte del body: el body contiene la nav, el footer y un div,
@@ -72,7 +72,8 @@ function content_57eac7ef0a78f4_46361328 (Smarty_Internal_Template $_smarty_tpl)
           <li id ="navUltimos"><a href="#">Ultimos Campeones</a></li>
           <li class="navItem" data-nombre-pagina="contContacto.html"><a href="#">Contacto</a></li>
           <li class="navItem" data-nombre-pagina="contRest.html"><a href="#">Rest</a></li>
-          <li><a href="#">Multimedio</a></li>
+          <li><a href="#">Multimedia</a></li>
+          <li><a href="abrir_abm" data-nombre-pagina="vacio.html">ABM</a></li>
           <li><a href="https://www.facebook.com/groups/rFzonal.arg/" target="_blank">Facebook</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->

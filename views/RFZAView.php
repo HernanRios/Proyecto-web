@@ -23,6 +23,12 @@ class RFZAView
     $this->smarty->display('index.tpl');
   }
 
+  function mostrarAbm($campeones,$categorias){
+    $this->smarty->assign('categorias',$categorias);
+    $this->smarty->assign('campeones',$campeones);
+    $this->smarty->display('abm.tpl');
+  }
+
 }
 
 
