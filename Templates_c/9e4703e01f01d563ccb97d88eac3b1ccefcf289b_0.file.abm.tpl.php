@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-18 16:57:04
+/* Smarty version 3.1.30, created on 2016-10-18 21:31:37
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58063840af08e0_02791892',
+  'unifunc' => 'content_58067899d13704_45281107',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1476802100,
+      1 => 1476819043,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_58063840af08e0_02791892 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58067899d13704_45281107 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -81,9 +81,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['fk_id_categoria'];?>
 </td>
-          <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['anio'];?>
+          <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 </td>
-          <td><a id="eliminarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
+          <td><a class="eliminarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 "><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
         </tr>
         <?php

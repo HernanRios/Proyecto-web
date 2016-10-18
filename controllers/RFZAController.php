@@ -40,12 +40,14 @@ class RFZAController
 
 
   function eliminarCampeon(){
-    echo '<script language="javascript">alert("php eliminar");</script>';
-    $key = $_GET['campeon'];
+    $key = $_GET['idcampeonato'];
     $this->modelo->eliminarCampeon($key);
-    $campeones = $this->modelo->getCampeones();
-    $this->vista->mostrarAbm($campeones);
-    echo "Entro";
+    $this->abrir_abm();
+  }
+  function eliminarCategoria(){
+    $key = $_GET['idcategoria'];
+    $this->modelo->eliminarCategoria($key);
+    $this->abrir_abm();
   }
 
 

@@ -22,6 +22,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_ELIMINAR_CAMPEON:
   $controller->eliminarCampeon();
   break;
+  case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
+  $controller->eliminarCategoria();
+  break;
   default:
   $controller->iniciar();
   break;

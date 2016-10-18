@@ -36,8 +36,8 @@
           <td>{$campeon['campeon']}</td>
           <td>{$campeon['subcampeon']}</td>
           <td>{$campeon['fk_id_categoria']}</td>
-          <td>{$campeon['anio']}</td>
-          <td><a id="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+          <td>{$campeon['id_campeonato']}</td>
+          <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
         </tr>
         {/foreach}
       </tbody>

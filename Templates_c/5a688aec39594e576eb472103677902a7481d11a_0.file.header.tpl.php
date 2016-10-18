@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-18 16:57:04
+/* Smarty version 3.1.30, created on 2016-10-18 21:09:57
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58063840c4c9f6_39308928',
+  'unifunc' => 'content_58067385800b15_59041872',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a688aec39594e576eb472103677902a7481d11a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\header.tpl',
-      1 => 1476479746,
+      1 => 1476817772,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58063840c4c9f6_39308928 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58067385800b15_59041872 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <!-- Esta es la pagina principal, la cual solo contiene el head y una parte del body: el body contiene la nav, el footer y un div,

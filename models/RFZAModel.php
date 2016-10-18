@@ -40,5 +40,10 @@ function getCampeones(){
   $sentencia = $this->db->prepare("delete from campeonato where id_campeonato=?");
   $sentencia->execute(array($campeon));
 }
+function eliminarCategoria($categoria){
+  echo '<script language="javascript">alert("elimino categoria");</script>';
+$sentencia = $this->db->prepare("delete from categoria where id_categoria=?");
+$sentencia->execute(array($categoria));
+}
 }
 ?>

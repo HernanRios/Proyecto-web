@@ -37,20 +37,31 @@ $(document).ready(function(){
     });
   });
 
-$("#eliminarCampeon").on("click", function(ev){
-  alert("entro al borrar");
-  ev.preventDefault();
-  borrarCampeon();
-});
-
-
-function borrarCampeon(){
-  alert("borrarCampeon");
-  $.get("index.php?action=eliminar_campeon",{$(this).attr("data-idcampeonato")}, function(data) {
-    $('#listaTareas').html(data);
-    $('#tarea').val('');
-
+  $(".eliminarCampeon").on("click", function(ev){
+    ev.preventDefault();
+    borrarCampeon($(this).data("idcampeonato"));
   });
 
 
-}})  ;
+  function borrarCampeon(id){
+    $.get("index.php?action=eliminar_campeon&idcampeonato="+id, function(data) {
+      $(".fondo").html(data);
+      $('#tarea').val('');
+    }); }
+
+    $(".eliminarCategoria").on("click", function(ev){
+      ev.preventDefault();
+      borrarCampeon($(this).data("idcategoria"));
+    });
+
+
+    function borrarCampeon(id){
+      alert("eliminar categoria");
+      $.get("index.php?action=eliminar_categoria&idcategoria="+id, function(data) {
+        $(".fondo").html(data);
+        $('#tarea').val('');
+      });
+
+
+
+}});
