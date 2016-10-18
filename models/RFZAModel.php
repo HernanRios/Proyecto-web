@@ -35,6 +35,13 @@ function getCampeones(){
       return $categorias;
     }
 
+    function getCategoria($id){
+      $sentencia = $this->db->prepare("select * from categoria where id_categoria=?");
+      $sentencia->execute(array($id));
+      $categoria = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+      return $categoria;
+    }
+
   function eliminarCampeon($campeon){
     echo '<script language="javascript">alert("casi elimino");</script>';
   $sentencia = $this->db->prepare("delete from campeonato where id_campeonato=?");

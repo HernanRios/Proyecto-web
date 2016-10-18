@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-18 21:31:37
+/* Smarty version 3.1.30, created on 2016-10-19 01:12:26
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58067899d13704_45281107',
+  'unifunc' => 'content_5806ac5a6e8406_35486593',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1476819043,
+      1 => 1476832332,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_58067899d13704_45281107 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5806ac5a6e8406_35486593 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -66,6 +66,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           <th>Categoria</th>
           <th>A&ntildeo</th>
           <th>Borrar</th>
+          <th>Editar</th>
         </tr>
       </thead>
       <tbody id="mostrarTabla">
@@ -84,7 +85,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
           <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 </td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
-"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+          <td><a class="editarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
+"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         <?php
 }
@@ -116,6 +119,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           <th>Cilindrada</th>
           <th>Zona</th>
           <th>Borrar</th>
+          <th>Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -132,7 +136,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
           <td><?php echo $_smarty_tpl->tpl_vars['categoria']->value['zona'];?>
 </td>
           <td><a class="eliminarCategoria" href="#" data-idcategoria="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
-"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+          <td><a class="editarCategoria" href="#" data-idcategoria="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
+"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         <?php
 }
@@ -142,6 +148,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
       </tbody>
     </table>
+    <div id="topo">
+    </div>
+  </div>
+  <div id="editorCategoria">
   </div>
 
   <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

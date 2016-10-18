@@ -28,6 +28,7 @@
           <th>Categoria</th>
           <th>A&ntildeo</th>
           <th>Borrar</th>
+          <th>Editar</th>
         </tr>
       </thead>
       <tbody id="mostrarTabla">
@@ -37,7 +38,8 @@
           <td>{$campeon['subcampeon']}</td>
           <td>{$campeon['fk_id_categoria']}</td>
           <td>{$campeon['id_campeonato']}</td>
-          <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+          <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+          <td><a class="editarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         {/foreach}
       </tbody>
@@ -64,6 +66,7 @@
           <th>Cilindrada</th>
           <th>Zona</th>
           <th>Borrar</th>
+          <th>Editar</th>
         </tr>
       </thead>
       <tbody>
@@ -72,11 +75,16 @@
           <td>{$categoria['id_categoria']}</td>
           <td>{$categoria['cilindrada']}</td>
           <td>{$categoria['zona']}</td>
-          <td><a class="eliminarCategoria" href="#" data-idcategoria="{$categoria['id_categoria']}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+          <td><a class="eliminarCategoria" href="#" data-idcategoria="{$categoria['id_categoria']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
+          <td><a class="editarCategoria" href="#" data-idcategoria="{$categoria['id_categoria']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         {/foreach}
       </tbody>
     </table>
+    <div id="topo">
+    </div>
+  </div>
+  <div id="editorCategoria">
   </div>
 
   {include file="footer.tpl"}

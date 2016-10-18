@@ -60,8 +60,23 @@ $(document).ready(function(){
       $.get("index.php?action=eliminar_categoria&idcategoria="+id, function(data) {
         $(".fondo").html(data);
         $('#tarea').val('');
+      });}
+
+      function editarCategoria(id){
+        alert("editar categoria");
+        $.get("index.php?action=editar_categoria&idcategoria="+id, function(data) {
+          alert(data);
+          $(".topo").html(data);
+        });
+      }
+
+
+      $(".editarCategoria").on("click", function(ev){
+        ev.preventDefault();
+        editarCategoria($(this).data("idcategoria"));
       });
 
 
 
-}});
+
+});

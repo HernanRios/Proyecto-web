@@ -29,6 +29,10 @@ class RFZAView
     $this->smarty->display('abm.tpl');
   }
 
+  function mostrarEditor ($categoria){
+    $this->smarty->assign('categoria',$categoria);
+    $this->smarty->display('formularioCategoria.tpl');
+  }
 }
 
 

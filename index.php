@@ -25,6 +25,10 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
   $controller->eliminarCategoria();
   break;
+  case ConfigApp::$ACTION_EDITAR_CATEGORIA:
+  $controller->editarCategoria();
+  break;
+
   default:
   $controller->iniciar();
   break;
