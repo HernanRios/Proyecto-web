@@ -1,5 +1,6 @@
 {include file="header.tpl"}
-<div class="container">
+<div class="container ">
+  <div class="contenedor">
   <form  action="guardar_campeon" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="campeon">Campeon</label>
@@ -18,10 +19,11 @@
     <div class="form-group">
       <input type="submit" name="Agregar" id="agregarTareaBtn">
     </form>
+    </div>
   </div>
-  <div id="editorCampeonato">
+  <div class="contenedor" id="editorCampeonato">
   </div>
-  <div>
+  <div class="contenedor">
     <table class="table table-stripper">
       <thead>
         <tr>
@@ -39,7 +41,7 @@
           <td>{$campeon['campeon']}</td>
           <td>{$campeon['subcampeon']}</td>
           <td>{$campeon['fk_id_categoria']}</td>
-          <td>{$campeon['id_campeonato']}</td>
+          <td>{$campeon['anio']}</td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
           <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
@@ -47,9 +49,9 @@
       </tbody>
     </table>
   </div>
-  <div class="editorCampeon">
+  <div class="editorCampeon contenedor">
   </div>
-  <div>
+  <div class="contenedor">
     <form  action="guardar_categoria" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="categoria">Categoria</label>
@@ -61,8 +63,8 @@
         <input type="submit" name="Agregar">
       </form>
     </div>
-  </div>
-  <div>
+  </div class="contenedor">
+  <div class="contenedor">
     <table class="table table-stripper">
       <thead>
         <tr>
@@ -85,8 +87,8 @@
         {/foreach}
       </tbody>
     </table>
-  </div>
-  <div id="editorCategoria">
+  </div class="contenedor">
+  <div id="editorCategoria" class="contenedor">
   </div>
 
   {include file="footer.tpl"}

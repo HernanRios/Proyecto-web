@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-19 15:57:42
+/* Smarty version 3.1.30, created on 2016-10-20 01:02:14
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\formularioCategoria.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58077bd68ca8b2_16527894',
+  'unifunc' => 'content_5807fb76d13994_99311880',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_58077bd68ca8b2_16527894 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5807fb76d13994_99311880 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categoria']->value, 'category', false, 'index');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['category']->value) {

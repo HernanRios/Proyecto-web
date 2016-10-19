@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-19 18:06:31
+/* Smarty version 3.1.30, created on 2016-10-20 01:02:01
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_58079a0766c470_34192948',
+  'unifunc' => 'content_5807fb6962f506_30165567',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1476893185,
+      1 => 1476918117,
       2 => 'file',
     ),
   ),
@@ -22,11 +22,12 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_58079a0766c470_34192948 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5807fb6962f506_30165567 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-<div class="container">
+<div class="container ">
+  <div class="contenedor">
   <form  action="guardar_campeon" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="campeon">Campeon</label>
@@ -56,10 +57,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
     <div class="form-group">
       <input type="submit" name="Agregar" id="agregarTareaBtn">
     </form>
+    </div>
   </div>
-  <div id="editorCampeonato">
+  <div class="contenedor" id="editorCampeonato">
   </div>
-  <div>
+  <div class="contenedor">
     <table class="table table-stripper">
       <thead>
         <tr>
@@ -84,7 +86,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['fk_id_categoria'];?>
 </td>
-          <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
+          <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['anio'];?>
 </td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 "><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
@@ -100,9 +102,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
       </tbody>
     </table>
   </div>
-  <div class="editorCampeon">
+  <div class="editorCampeon contenedor">
   </div>
-  <div>
+  <div class="contenedor">
     <form  action="guardar_categoria" method="post" enctype="multipart/form-data">
       <div class="form-group">
         <label for="categoria">Categoria</label>
@@ -114,8 +116,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
         <input type="submit" name="Agregar">
       </form>
     </div>
-  </div>
-  <div>
+  </div class="contenedor">
+  <div class="contenedor">
     <table class="table table-stripper">
       <thead>
         <tr>
@@ -152,8 +154,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
       </tbody>
     </table>
-  </div>
-  <div id="editorCategoria">
+  </div class="contenedor">
+  <div id="editorCategoria" class="contenedor">
   </div>
 
   <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);

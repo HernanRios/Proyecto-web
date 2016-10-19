@@ -19,7 +19,7 @@ class RFZAController
   function abrir_abm(){
     $campeones = $this->modelo->getCampeones();
     $categorias = $this->modelo->getCategorias();
-      $this->vista->mostrarAbm($campeones,$categorias);
+    $this->vista->mostrarAbm($campeones,$categorias);
   }
 
   function guardar(){
