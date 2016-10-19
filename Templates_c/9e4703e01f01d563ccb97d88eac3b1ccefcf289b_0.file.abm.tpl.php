@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-19 01:12:26
+/* Smarty version 3.1.30, created on 2016-10-19 01:33:45
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5806ac5a6e8406_35486593',
+  'unifunc' => 'content_5806b1593015f5_68828866',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1476832332,
+      1 => 1476833604,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5806ac5a6e8406_35486593 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5806b1593015f5_68828866 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -148,7 +148,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
       </tbody>
     </table>
-    <div id="topo">
+    <div class="topo">
     </div>
   </div>
   <div id="editorCategoria">

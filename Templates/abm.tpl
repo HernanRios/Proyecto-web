@@ -81,7 +81,7 @@
         {/foreach}
       </tbody>
     </table>
-    <div id="topo">
+    <div class="topo">
     </div>
   </div>
   <div id="editorCategoria">

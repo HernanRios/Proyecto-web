@@ -52,5 +52,6 @@ function eliminarCategoria($categoria){
 $sentencia = $this->db->prepare("delete from categoria where id_categoria=?");
 $sentencia->execute(array($categoria));
 }
+
 }
 ?>
