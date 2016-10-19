@@ -82,6 +82,11 @@ class RFZAController
     $this->abrir_abm();
   }
 
+  function mostrarTabla(){
+    $campeones = $this->modelo->getCampeones();
+    $this->vista->mostrarTabla($campeones);
+  }
+
 
 }
 

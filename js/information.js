@@ -29,7 +29,7 @@ $(document).ready(function(){
       dataType: "html",
       success:function(data){
         $("#mostrador").html(data);
-        obtenerTabla();
+        cargarTabla();
       } ,
       error: function(){
         alert("Ha ocurrido un error");
@@ -82,6 +82,15 @@ $(document).ready(function(){
         ev.preventDefault();
         cargar_editorCampeon($(this).data("idcampeonato"));
       });
+
+      function cargarTabla(){
+        $.post("index.php?action=mostrar_tabla", function(data) {
+          alert("carg");
+          $("#mostrarTabla").html(data);
+          $('#tarea').val('');
+        });
+
+      }
 
 
 

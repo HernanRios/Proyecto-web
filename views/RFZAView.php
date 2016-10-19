@@ -39,6 +39,11 @@ class RFZAView
     $this->smarty->assign('campeonOrginal',$campeon);
     $this->smarty->display('formularioCampeonato.tpl');
   }
+
+   function mostrarTabla($campeones){
+     $this->smarty->assign('campeones',$campeones);
+     $this->smarty->display('tabla.tpl');
+   }
 }
 
 

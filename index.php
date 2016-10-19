@@ -37,6 +37,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_EDITAR_CAMPEON:
   $controller->EditarCampeon();
   break;
+  case ConfigApp::$ACTION_MOSTRAR_TABLA:
+  $controller->mostrarTabla();
+  break;
   default:
   $controller->iniciar();
   break;
