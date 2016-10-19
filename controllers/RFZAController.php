@@ -50,10 +50,19 @@ class RFZAController
     $this->abrir_abm();
   }
 
-  function editarCategoria(){
+  function cargarEditorCategoria(){
     $id_categoria = $_GET['idcategoria'];
     $categoria = $this->modelo->getCategoria($id_categoria);
     $this->vista->mostrarEditor($categoria);
+  }
+
+  function EditarCategoria(){
+    $categoria = $_GET['categoria'];
+    $cilindrada = $_GET['cilindrada'];
+    $zona = $_GET['zona'];
+    $categoriaOriginal = $_GET['categoriaOriginal'];
+    $this->modelo->editarCategoria($categoria,$cilindrada,$zona,$categoriaOriginal);
+    $this->abrir_abm();
   }
 
 

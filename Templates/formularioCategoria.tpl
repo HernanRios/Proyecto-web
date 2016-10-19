@@ -1,7 +1,8 @@
 {foreach from=$categoria key=index item=category}
 <h1>EDITOR DE CATEGORIA</h1>
-<form  action="editar_categoria" method="post" enctype="multipart/form-data">
+<form  action="editar_categoria" method="get" enctype="multipart/form-data">
   <div class="form-group">
+    <input type="hidden" class="form-control" name="categoriaOriginal" required value="{$category['id_categoria']}"/>
     <label for="categoria">Categoria</label>
     <input type="text" class="form-control" name="categoria" placeholder="Categoria" required value="{$category['id_categoria']}"/>
     <label for="cilindrada">cilindrada</label>

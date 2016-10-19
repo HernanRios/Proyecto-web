@@ -76,13 +76,11 @@
           <td>{$categoria['cilindrada']}</td>
           <td>{$categoria['zona']}</td>
           <td><a class="eliminarCategoria" href="#" data-idcategoria="{$categoria['id_categoria']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
-          <td><a class="editarCategoria" href="#" data-idcategoria="{$categoria['id_categoria']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+          <td><a class="cargar_editorCategoria" href="#" data-idcategoria="{$categoria['id_categoria']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         {/foreach}
       </tbody>
     </table>
-    <div class="topo">
-    </div>
   </div>
   <div id="editorCategoria">
   </div>

@@ -56,24 +56,21 @@ $(document).ready(function(){
 
 
     function borrarCampeon(id){
-      alert("eliminar categoria");
       $.get("index.php?action=eliminar_categoria&idcategoria="+id, function(data) {
         $(".fondo").html(data);
         $('#tarea').val('');
       });}
 
-      function editarCategoria(id){
-        alert("editar categoria");
-        $.get("index.php?action=editar_categoria&idcategoria="+id, function(data) {
-          alert(data);
-          $(".topo").html(data);
+      function cargar_editorCategoriar(id){
+        $.get("index.php?action=cargar_editorCategoria&idcategoria="+id, function(data) {
+          $("#editorCategoria").html(data);
         });
       }
 
 
-      $(".editarCategoria").on("click", function(ev){
+      $(".cargar_editorCategoria").on("click", function(ev){
         ev.preventDefault();
-        editarCategoria($(this).data("idcategoria"));
+        cargar_editorCategoriar($(this).data("idcategoria"));
       });
 
 
