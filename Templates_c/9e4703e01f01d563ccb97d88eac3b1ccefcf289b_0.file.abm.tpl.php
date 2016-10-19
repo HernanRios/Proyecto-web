@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-19 14:40:38
+/* Smarty version 3.1.30, created on 2016-10-19 18:06:31
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_580769c6d9a8b3_42967589',
+  'unifunc' => 'content_58079a0766c470_34192948',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1476880832,
+      1 => 1476893185,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_580769c6d9a8b3_42967589 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58079a0766c470_34192948 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -57,6 +57,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
       <input type="submit" name="Agregar" id="agregarTareaBtn">
     </form>
   </div>
+  <div id="editorCampeonato">
+  </div>
   <div>
     <table class="table table-stripper">
       <thead>
@@ -86,7 +88,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
 </td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 "><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
-          <td><a class="editarCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
+          <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 "><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         <?php
@@ -97,6 +99,8 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 
       </tbody>
     </table>
+  </div>
+  <div class="editorCampeon">
   </div>
   <div>
     <form  action="guardar_categoria" method="post" enctype="multipart/form-data">

@@ -65,6 +65,22 @@ class RFZAController
     $this->abrir_abm();
   }
 
+  function cargarEditorCampeon(){
+    $id_campeon = $_GET['idcampeonato'];
+      $campeon = $this->modelo->getCampeon($id_campeon);
+    $categorias = $this->modelo->getCategorias();
+    $this->vista->mostrarEditorCampeon($campeon,$categorias);
+  }
+
+  function EditarCampeon(){
+    $campeonOriginal = $_GET['idcampeonato'];
+    $campeon = $_GET['campeon'];
+    $categoria = $_GET['categoria'];
+    $subcampeon = $_GET['subcampeon'];
+    $anio = $_GET['anio'];
+    $this->modelo->editarCampeon($campeonOriginal,$campeon,$categoria,$subcampeon,$anio);
+    $this->abrir_abm();
+  }
 
 
 }

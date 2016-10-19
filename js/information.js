@@ -66,11 +66,21 @@ $(document).ready(function(){
           $("#editorCategoria").html(data);
         });
       }
+      function cargar_editorCampeon(id){
+        $.get("index.php?action=cargar_editorCampeon&idcampeonato="+id, function(data) {
+          $(".editorCampeon").html(data);
+        });
+      }
 
 
       $(".cargar_editorCategoria").on("click", function(ev){
         ev.preventDefault();
         cargar_editorCategoriar($(this).data("idcategoria"));
+      });
+
+      $(".cargar_editorCampeon").on("click", function(ev){
+        ev.preventDefault();
+        cargar_editorCampeon($(this).data("idcampeonato"));
       });
 
 

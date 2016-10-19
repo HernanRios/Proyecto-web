@@ -31,6 +31,12 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_EDITAR_CATEGORIA:
   $controller->EditarCategoria();
   break;
+  case ConfigApp::$ACTION_CARGAR_EDITORCAMPEON:
+  $controller->cargarEditorCampeon();
+  break;
+  case ConfigApp::$ACTION_EDITAR_CAMPEON:
+  $controller->EditarCampeon();
+  break;
   default:
   $controller->iniciar();
   break;

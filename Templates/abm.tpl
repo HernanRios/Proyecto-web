@@ -19,6 +19,8 @@
       <input type="submit" name="Agregar" id="agregarTareaBtn">
     </form>
   </div>
+  <div id="editorCampeonato">
+  </div>
   <div>
     <table class="table table-stripper">
       <thead>
@@ -39,11 +41,13 @@
           <td>{$campeon['fk_id_categoria']}</td>
           <td>{$campeon['id_campeonato']}</td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
-          <td><a class="editarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+          <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
         </tr>
         {/foreach}
       </tbody>
     </table>
+  </div>
+  <div class="editorCampeon">
   </div>
   <div>
     <form  action="guardar_categoria" method="post" enctype="multipart/form-data">

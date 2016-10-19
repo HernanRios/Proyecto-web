@@ -8,6 +8,8 @@ class ConfigApp{
   public static $ACTION_GUARDAR_CATEGORIA = 'guardar_categoria';
   public static $ACTION_CARGAR_EDITORCATEGORIA = 'cargar_editorCategoria';
   public static $ACTION_EDITAR_CATEGORIA = 'editar_categoria';
+  public static $ACTION_CARGAR_EDITORCAMPEON= 'cargar_editorCampeon';
+public static $ACTION_EDITAR_CAMPEON = 'editar_campeon';
 }
 
  ?>

@@ -22,6 +22,13 @@ class RFZAModel
     $id_categoria = $this->db->lastInsertId();
   }
 
+  function getCampeon($id_campeonato){
+    $sentencia = $this->db->prepare("select * from campeonato where id_campeonato=?");
+    $sentencia ->execute(array($id_campeonato));
+    $campeonato = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    return $campeonato;
+  }
+
   function getCampeones(){
     $sentencia = $this->db->prepare( "select * from campeonato");
     $sentencia->execute();
@@ -54,6 +61,11 @@ class RFZAModel
     $consulta = $this->db->prepare('UPDATE categoria SET id_categoria=?,cilindrada=?,zona=?  WHERE id_categoria=?');
     $consulta->execute(array($id_categoria,$cilindrada,$zona,$categoriaOriginal));
     echo $this->db->lastInsertId();
+  }
+
+  function editarCampeon($campeonOriginal,$campeon,$categoria,$subcampeon,$anio){
+    $consulta = $this->db->prepare('UPDATE campeonato SET campeon=?, subcampeon=?,fk_id_categoria=?,anio=? WHERE id_campeonato=?');
+    $consulta->execute(array($campeon,$subcampeon,$categoria,$anio,$campeonOriginal));
   }
 
 }

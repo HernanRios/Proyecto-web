@@ -33,6 +33,12 @@ class RFZAView
     $this->smarty->assign('categoria',$categoria);
     $this->smarty->display('formularioCategoria.tpl');
   }
+
+  function mostrarEditorCampeon ($campeon,$categoria){
+    $this->smarty->assign('categorias',$categoria);
+    $this->smarty->assign('campeonOrginal',$campeon);
+    $this->smarty->display('formularioCampeonato.tpl');
+  }
 }
 
 
