@@ -51,11 +51,11 @@ $(document).ready(function(){
 
     $(".eliminarCategoria").on("click", function(ev){
       ev.preventDefault();
-      borrarCampeon($(this).data("idcategoria"));
+      borrarCategoria($(this).data("idcategoria"));
     });
 
 
-    function borrarCampeon(id){
+    function borrarCategoria(id){
       $.get("index.php?action=eliminar_categoria&idcategoria="+id, function(data) {
         $(".fondo").html(data);
         $('#tarea').val('');

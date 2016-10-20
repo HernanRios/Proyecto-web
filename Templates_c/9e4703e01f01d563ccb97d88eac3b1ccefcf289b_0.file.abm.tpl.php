@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-20 01:02:01
+/* Smarty version 3.1.30, created on 2016-10-20 22:32:18
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5807fb6962f506_30165567',
+  'unifunc' => 'content_580929d2e73326_48856150',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1476918117,
+      1 => 1476995507,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5807fb6962f506_30165567 (Smarty_Internal_Template $_smarty_tpl) {
+function content_580929d2e73326_48856150 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
 <div class="container ">
   <div class="contenedor">
-  <form  action="guardar_campeon" method="post" enctype="multipart/form-data">
+  <form  action="guardar_campeon" method="get" enctype="multipart/form-data">
     <div class="form-group">
       <label for="campeon">Campeon</label>
       <input type="text" class="form-control" name="campeon" placeholder="Campeon" required />
@@ -42,7 +42,7 @@ if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['categoria']->value) {
 ?>
         <option value=<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
-> <?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
+><?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
 </option>
         <?php
 }

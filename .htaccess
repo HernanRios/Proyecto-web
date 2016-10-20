@@ -7,5 +7,6 @@
   RewriteRule ^(.*)/(.*)$ index.php?action=$1&campeon$2 [QSA,L]
   RewriteRule ^(.*)/(.*)$ index.php?action=$1&?id_campeonato=$2 [QSA,L]
   RewriteRule ^(.*)$ index.php?action=$1 [QSA,L]
+  RewriteRule ^(.*)$ $1 [QSA,L]
 
 </IfModule>

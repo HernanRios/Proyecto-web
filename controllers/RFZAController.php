@@ -23,10 +23,10 @@ class RFZAController
   }
 
   function guardar(){
-    $campeon = $_POST['campeon'];
-    $categoria = $_POST['categoria'];
-    $subcampeon = $_POST['subcampeon'];
-    $anio = $_POST['anio'];
+    $campeon = $_GET['campeon'];
+    $categoria = $_GET['categoria'];
+    $subcampeon = $_GET['subcampeon'];
+    $anio = $_GET['anio'];
     $this->modelo->crearIngreso($campeon,$categoria,$subcampeon,$anio);
     $this->abrir_abm();
   }

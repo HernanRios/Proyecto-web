@@ -11,9 +11,12 @@ class RFZAModel
   }
 
   function crearIngreso($campeon,$categoria,$subcampeon,$anio){
+    echo"ENTRO";
+    echo $categoria;
     $sentencia = $this->db->prepare("INSERT INTO campeonato(campeon,subcampeon,fk_id_categoria,anio) VALUES(?,?,?,?)");
     $sentencia->execute(array($campeon,$subcampeon,$categoria,$anio));
     $id_tarea = $this->db->lastInsertId();
+    echo $id_tarea;
   }
 
   function crearCategoria($categoria,$cilindrada,$zona){
@@ -50,6 +53,7 @@ class RFZAModel
   }
 
   function eliminarCampeon($campeon){
+    echo $campeon;
     $sentencia = $this->db->prepare("delete from campeonato where id_campeonato=?");
     $sentencia->execute(array($campeon));
   }

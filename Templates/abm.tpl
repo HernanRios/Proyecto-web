@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <div class="container ">
   <div class="contenedor">
-  <form  action="guardar_campeon" method="post" enctype="multipart/form-data">
+  <form  action="guardar_campeon" method="get" enctype="multipart/form-data">
     <div class="form-group">
       <label for="campeon">Campeon</label>
       <input type="text" class="form-control" name="campeon" placeholder="Campeon" required />
@@ -10,7 +10,7 @@
       <label for="grupo">Categoria</label>
       <select class="form-control selectpicker" data-style="btn-primary" name="categoria" >
         {foreach from=$categorias key=index item=categoria}
-        <option value={$categoria['id_categoria']}> {$categoria['id_categoria']}</option>
+        <option value={$categoria['id_categoria']}>{$categoria['id_categoria']}</option>
         {/foreach}
       </select>
       <label for="grupo">Anio</label>
