@@ -14,6 +14,8 @@
     </select>
     <label for="grupo">Anio</label>
     <input type="text" class="form-control" name="anio" value="{$campeon['anio']}" required />
+    <label for="imagenesCampeonato">Imagenes del Campeonato</label>
+    <input type="file" name="imagenesCampeonato[]" id="imagenesCampeonato" multiple required="true">
   </div>
   <div class="form-group">
     <input type="submit" name="editar" >

@@ -1,7 +1,7 @@
 {include file="header.tpl"}
 <div class="container ">
   <div class="contenedor">
-  <form  action="guardar_campeon" method="get" enctype="multipart/form-data">
+  <form  action="guardar_campeon" method="post" enctype="multipart/form-data">
     <div class="form-group">
       <label for="campeon">Campeon</label>
       <input type="text" class="form-control" name="campeon" placeholder="Campeon" required />
@@ -15,6 +15,9 @@
       </select>
       <label for="grupo">Anio</label>
       <input type="text" class="form-control" name="anio" placeholder="anio" required />
+      <label for="imagenesCampeonato">Imagenes del Campeonato</label>
+        <input type="file" name="imagenesCampeonato[]" id="imagenesCampeonato" multiple required="true">
+
     </div>
     <div class="form-group">
       <input type="submit" name="Agregar" id="agregarTareaBtn">
@@ -44,6 +47,9 @@
           <td>{$campeon['anio']}</td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
           <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+          {foreach from=$campeon['imagenes'] key=index item=imagen}
+      <img src="{$imagen['path']}" alt="TareaImagen_{$tarea['nombre']}_{$imagen['id_imagen']}"  class="img-thumbnail">
+      {/foreach}
         </tr>
         {/foreach}
       </tbody>

@@ -23,13 +23,22 @@ class RFZAController
   }
 
   function guardar(){
-    $campeon = $_GET['campeon'];
-    $categoria = $_GET['categoria'];
-    $subcampeon = $_GET['subcampeon'];
-    $anio = $_GET['anio'];
-    $this->modelo->crearIngreso($campeon,$categoria,$subcampeon,$anio);
-    $this->abrir_abm();
+    if((isset($_POST['campeon']) && (isset($_POST['categoria'])) && (isset($_POST['categoria']) &&
+     (isset($_POST['subcampeon']) && (isset($_POST['anio'])))))){
+      $campeon = $_POST['campeon'];
+      $categoria = $_POST['categoria'];
+      $subcampeon = $_POST['subcampeon'];
+      $anio = $_POST['anio'];
+      $imagenesCampeonato = $_FILES['imagenesCampeonato'];
+      $this->modelo->crearIngreso($campeon,$categoria,$subcampeon,$anio,$imagenesCampeonato);
+      $this->abrir_abm();
+    }
+    else{
+      $this->vista->mostrarMensaje("Error debe completar todos los campos", "danger");
+    }
   }
+
+
   function guardarCategoria(){
     $categoria = $_POST['categoria'];
     $cilindrada = $_POST['cilindrada'];

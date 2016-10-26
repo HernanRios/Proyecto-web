@@ -10,13 +10,18 @@ class RFZAModel
     $this->db = new PDO('mysql:host=localhost;dbname=rfza;charset=utf8', 'root', '');
   }
 
-  function crearIngreso($campeon,$categoria,$subcampeon,$anio){
-    echo"ENTRO";
-    echo $categoria;
+  function crearIngreso($campeon,$categoria,$subcampeon,$anio,$imagenesCampeonato){
     $sentencia = $this->db->prepare("INSERT INTO campeonato(campeon,subcampeon,fk_id_categoria,anio) VALUES(?,?,?,?)");
     $sentencia->execute(array($campeon,$subcampeon,$categoria,$anio));
-    $id_tarea = $this->db->lastInsertId();
-    echo $id_tarea;
+    $id_campeonato = $this->db->lastInsertId();
+    for ($i=0 ; $i < count($imagenesCampeonato['size']) ; $i++ ) {
+      $path="img/campeonato/".uniqid()."_".$imagenesCampeonato['name'][$i];
+      move_uploaded_file($imagenesCampeonato['tmp_name'][$i], $path);
+     $insertImagen = $this->db->prepare("insert into imagenCampeonato(path,fk_id_campeonato) VALUES(?,?)");
+     $insertImagen->execute(array($path,$id_campeonato));
+   }
+
+    echo $id_campeonato;
   }
 
   function crearCategoria($categoria,$cilindrada,$zona){
@@ -36,8 +41,17 @@ class RFZAModel
     $sentencia = $this->db->prepare( "select * from campeonato");
     $sentencia->execute();
     $campeones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($campeones as $key => $campeon) {
+      $campeones[$key]['imagenes']=$this->getImagenes($campeon['id_campeonato']);}
     return $campeones;
   }
+
+  function getImagenes($id_campeonato){
+      $sentencia = $this->db->prepare( "select * from imagenCampeonato where fk_id_campeonato=?");
+      $sentencia->execute(array($id_campeonato));
+      return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    }
+
   function getCategorias(){
     $sentencia = $this->db->prepare( "select * from categoria");
     $sentencia->execute();
