@@ -14,13 +14,16 @@ class RFZAModel
     $sentencia = $this->db->prepare("INSERT INTO campeonato(campeon,subcampeon,fk_id_categoria,anio) VALUES(?,?,?,?)");
     $sentencia->execute(array($campeon,$subcampeon,$categoria,$anio));
     $id_campeonato = $this->db->lastInsertId();
+    $cntFotos=0;
     for ($i=0 ; $i < count($imagenesCampeonato['size']) ; $i++ ) {
+      $cntFotos = $cntFotos +1;
       $path="img/campeonato/".uniqid()."_".$imagenesCampeonato['name'][$i];
       move_uploaded_file($imagenesCampeonato['tmp_name'][$i], $path);
-     $insertImagen = $this->db->prepare("insert into imagenCampeonato(path,fk_id_campeonato) VALUES(?,?)");
+     $insertImagen = $this->db->prepare("INSERT INTO imagencampeonato(path,fk_id_campeonato) VALUES(?,?)");
      $insertImagen->execute(array($path,$id_campeonato));
    }
-
+   echo "la cantidad de fotos fue de >";
+    echo $cntFotos;
     echo $id_campeonato;
   }
 
@@ -84,7 +87,13 @@ class RFZAModel
   function editarCampeon($campeonOriginal,$campeon,$categoria,$subcampeon,$anio){
     $consulta = $this->db->prepare('UPDATE campeonato SET campeon=?, subcampeon=?,fk_id_categoria=?,anio=? WHERE id_campeonato=?');
     $consulta->execute(array($campeon,$subcampeon,$categoria,$anio,$campeonOriginal));
-  }
+    $id_campeonato = $this->db->lastInsertId();
+    for ($i=0 ; $i < count($imagenesCampeonato['size']) ; $i++ ) {
+      $path="img/campeonato/".uniqid()."_".$imagenesCampeonato['name'][$i];
+      move_uploaded_file($imagenesCampeonato['tmp_name'][$i], $path);
+     $insertImagen = $this->db->prepare("insert into imagenCampeonato(path,fk_id_campeonato) VALUES(?,?)");
+     $insertImagen->execute(array($path,$id_campeonato));
+  }}
 
 }
 ?>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-10-26 20:29:14
+/* Smarty version 3.1.30, created on 2016-10-26 21:39:23
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5810f5fa624391_65383777',
+  'unifunc' => 'content_5811066bade585_80513734',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1477506507,
+      1 => 1477510533,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5810f5fa624391_65383777 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5811066bade585_80513734 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -74,6 +74,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
           <th>A&ntildeo</th>
           <th>Borrar</th>
           <th>Editar</th>
+          <th>FOTOS</th>
         </tr>
       </thead>
       <tbody id="mostrarTabla">
@@ -95,21 +96,22 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
 "><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
           <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
 "><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+          <th><ul>
           <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['campeon']->value['imagenes'], 'imagen', false, 'index');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['imagen']->value) {
 ?>
-      <img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['path'];?>
-" alt="TareaImagen_<?php echo $_smarty_tpl->tpl_vars['tarea']->value['nombre'];?>
-_<?php echo $_smarty_tpl->tpl_vars['imagen']->value['id_imagen'];?>
-"  class="img-thumbnail">
-      <?php
+            <li><img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['path'];?>
+" alt="TareaImagen_<?php echo $_smarty_tpl->tpl_vars['campeon']->value['campeon'];?>
+"  class="img-thumbnail"width="100" height="100"></li>
+            <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
+          </ul> </td>
         </tr>
         <?php
 }
@@ -175,6 +177,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
   </div class="contenedor">
   <div id="editorCategoria" class="contenedor">
   </div>
+
 
   <?php $_smarty_tpl->_subTemplateRender("file:footer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>

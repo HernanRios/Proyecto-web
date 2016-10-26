@@ -36,6 +36,7 @@
           <th>A&ntildeo</th>
           <th>Borrar</th>
           <th>Editar</th>
+          <th>FOTOS</th>
         </tr>
       </thead>
       <tbody id="mostrarTabla">
@@ -47,9 +48,11 @@
           <td>{$campeon['anio']}</td>
           <td><a class="eliminarCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></td>
           <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+          <th><ul>
           {foreach from=$campeon['imagenes'] key=index item=imagen}
-      <img src="{$imagen['path']}" alt="TareaImagen_{$tarea['nombre']}_{$imagen['id_imagen']}"  class="img-thumbnail">
-      {/foreach}
+            <li><img src="{$imagen['path']}" alt="TareaImagen_{$campeon['campeon']}"  class="img-thumbnail"width="100" height="100"></li>
+            {/foreach}
+          </ul> </td>
         </tr>
         {/foreach}
       </tbody>
@@ -96,5 +99,6 @@
   </div class="contenedor">
   <div id="editorCategoria" class="contenedor">
   </div>
+
 
   {include file="footer.tpl"}
