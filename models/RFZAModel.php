@@ -40,6 +40,15 @@ class RFZAModel
     return $campeonato;
   }
 
+  function getCampeonesPorCategoria($categoria){
+    $sentencia = $this->db->prepare( "select * from campeonato where fk_id_categoria=?");
+    $sentencia->execute(array($categoria));
+    $campeones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($campeones as $key => $campeon) {
+      $campeones[$key]['imagenes']=$this->getImagenes($campeon['id_campeonato']);}
+    return $campeones;
+  }
+
   function getCampeones(){
     $sentencia = $this->db->prepare( "select * from campeonato");
     $sentencia->execute();

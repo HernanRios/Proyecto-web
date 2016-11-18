@@ -10,5 +10,6 @@
     <label for="zona">Zona</label>
     <input type="text" class="form-control" name="zona" placeholder="Zona" required value="{$category['zona']}" />
     <input type="submit" name="Editar">
+
   </form>
 {/foreach}

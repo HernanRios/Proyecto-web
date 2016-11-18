@@ -96,6 +96,12 @@ class RFZAController
     $this->vista->mostrarTabla($campeones);
   }
 
+  function filtrarTabla(){
+    $categoria = $_GET['id_categoria'];
+    $campeones = $this->modelo->getCampeonesPorCategoria($categoria);
+    $this->vista->mostrarTabla($campeones);
+  }
+
 
 }
 

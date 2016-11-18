@@ -17,12 +17,20 @@
       <input type="text" class="form-control" name="anio" placeholder="anio" required />
       <label for="imagenesCampeonato">Imagenes del Campeonato</label>
         <input type="file" name="imagenesCampeonato[]" id="imagenesCampeonato" multiple required="true">
-
     </div>
     <div class="form-group">
       <input type="submit" name="Agregar" id="agregarTareaBtn">
     </form>
     </div>
+  </div>
+  <div class="contenedor">
+    <h1>Filtro por categoria</h1>
+    <select class="form-control selectpicker" data-style="btn-primary" name="categoria" >
+      {foreach from=$categorias key=index item=categoria}
+      <option data-filtro="1" value={$categoria['id_categoria']}>{$categoria['id_categoria']}</option>
+      {/foreach}
+    </select>
+     <button  class="btnFiltrarCategoria">Filtrar</button>
   </div>
   <div class="contenedor" id="editorCampeonato">
   </div>

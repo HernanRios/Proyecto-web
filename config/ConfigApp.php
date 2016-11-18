@@ -11,6 +11,7 @@ class ConfigApp{
   public static $ACTION_CARGAR_EDITORCAMPEON= 'cargar_editorCampeon';
   public static $ACTION_EDITAR_CAMPEON = 'editar_campeon';
   public static $ACTION_MOSTRAR_TABLA = 'mostrar_tabla';
+  public static $ACTION_FILTRAR_TABLA = 'filtrar_tabla';
 }
 
  ?>

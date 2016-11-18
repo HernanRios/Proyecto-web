@@ -40,6 +40,9 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_MOSTRAR_TABLA:
   $controller->mostrarTabla();
   break;
+  case ConfigApp::$ACTION_FILTRAR_TABLA:
+  $controller->FiltrarTabla();
+  break;
   default:
   $controller->iniciar();
   break;

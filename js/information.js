@@ -83,7 +83,7 @@ $(document).ready(function(){
         cargar_editorCampeon($(this).data("idcampeonato"));
       });
 
-      function cargarTabla(){
+      function cargarTabla(categoria){
         $.post("index.php?action=mostrar_tabla", function(data) {
           alert("carg");
           $("#mostrarTabla").html(data);
@@ -91,6 +91,23 @@ $(document).ready(function(){
         });
 
       }
+
+      $(".btnFiltrarCategoria").on("click",function (ev){
+        //ev.preventDefault();
+        alert($(this).data("filtro"));
+        filtrarCategorias($(this).data("idcampeonato"));
+        //filtrarCategorias($(this).data("filtro"));
+      });
+
+      function filtrarCategorias(id){
+        $.get("index.php?action=filtrar_tabla&id_categoria="+ id, function(data) {
+          alert(id);
+          $("#mostrarTabla").html(data);
+          $('#tarea').val('');
+        });
+
+      }
+
 
 
 
