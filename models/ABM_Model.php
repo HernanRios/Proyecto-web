@@ -1,6 +1,6 @@
 <?php
 
-class RFZAModel
+class ABM_Model
 {
   private $tareas;
   private $db;
@@ -22,8 +22,6 @@ class RFZAModel
      $insertImagen = $this->db->prepare("INSERT INTO imagencampeonato(path,fk_id_campeonato) VALUES(?,?)");
      $insertImagen->execute(array($path,$id_campeonato));
    }
-   echo "la cantidad de fotos fue de >";
-    echo $cntFotos;
     echo $id_campeonato;
   }
 

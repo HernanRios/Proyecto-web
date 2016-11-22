@@ -1,50 +1,81 @@
 <?php
-require('controllers/RFZAController.php');
+include_once "controllers/ABM_Controller.php";
+include_once "controllers/controllerLogin.php";
+include_once "controllers/nav_controller.php";
+include_once "controllers/Registrar_controller.php";
 require ('config/ConfigApp.php');
 
-$controller = new RFZAController();
+
 
 if (!array_key_exists(ConfigApp::$ACTION,$_REQUEST)){
-  $controller->iniciar();
-  die();
+  $navController = new NavController();
+  $navController->iniciar();
 }
 
 switch ($_REQUEST[ConfigApp::$ACTION]) {
+  case ConfigApp::$ACTION_MOSTRAR_LOGIN:
+  $Login_Controller = new LoginController();
+  $Login_Controller->Mostrarlogin();
+  break;
+  case ConfigApp::$ACTION_MOSTRAR_REGISTRAR:
+  $Login_Controller = new registrar_Controller();
+  $Login_Controller->mostrarRegistrar();
+  break;
+  case ConfigApp::$ACTION_REGISTRAR:
+  $Login_Controller = new registrar_Controller();
+  $Login_Controller->registrarUsuario();
+  break;
+  case ConfigApp::$ACTION_LOGIN:
+  $Login_Controller = new LoginController();
+  $Login_Controller->login();
+  break;
   case ConfigApp::$ACTION_GUARDAR_CAMPEON:
-  $controller->guardar();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->guardar();
   break;
   case ConfigApp::$ACTION_GUARDAR_CATEGORIA:
-  $controller->guardarCategoria();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->guardarCategoria();
   break;
   case ConfigApp::$ACTION_ABRIR_ABM:
-  $controller->abrir_abm();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->abrir_abm();
   break;
   case ConfigApp::$ACTION_ELIMINAR_CAMPEON:
-  $controller->eliminarCampeon();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->eliminarCampeon();
   break;
   case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
-  $controller->eliminarCategoria();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->eliminarCategoria();
   break;
   case ConfigApp::$ACTION_CARGAR_EDITORCATEGORIA:
-  $controller->cargarEditorCategoria();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->cargarEditorCategoria();
   break;
   case ConfigApp::$ACTION_EDITAR_CATEGORIA:
-  $controller->EditarCategoria();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->EditarCategoria();
   break;
   case ConfigApp::$ACTION_CARGAR_EDITORCAMPEON:
-  $controller->cargarEditorCampeon();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->cargarEditorCampeon();
   break;
   case ConfigApp::$ACTION_EDITAR_CAMPEON:
-  $controller->EditarCampeon();
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->EditarCampeon();
   break;
   case ConfigApp::$ACTION_MOSTRAR_TABLA:
-  $controller->mostrarTabla();
+  $navController = new NavController();
+  $navController->mostrarTabla();
   break;
   case ConfigApp::$ACTION_FILTRAR_TABLA:
-  $controller->FiltrarTabla();
+  $navController = new NavController();
+  $navController->FiltrarTabla();
   break;
   default:
-  $controller->iniciar();
+  $navController = new NavController();
+  $navController->iniciar();
   break;
 }
 ?>

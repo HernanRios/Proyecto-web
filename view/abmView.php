@@ -1,28 +1,8 @@
 <?php
-require('libs/Smarty.class.php');
+include_once 'view/View.php';
 
-class RFZAView
-{
-  private $smarty;
-
-  function __construct()
-  {
-    $this->smarty = new Smarty();
-  }
-
-  function agregarError($error){
-    $this->smarty->assign('error',$error);
-  }
-
-  function mostrarMensaje($mensaje, $tipo){
-    $this->smarty->assign('mensaje',$mensaje);
-    $this->smarty->assign('tipoMensaje',$tipo);
-  }
-
-  function mostrar(){
-    $this->smarty->display('index.tpl');
-  }
-
+class AbmView extends View {
+  
   function mostrarAbm($campeones,$categorias){
     $this->smarty->assign('categorias',$categorias);
     $this->smarty->assign('campeones',$campeones);
@@ -45,7 +25,4 @@ class RFZAView
      $this->smarty->display('tabla.tpl');
    }
 }
-
-
-
- ?>
+?>

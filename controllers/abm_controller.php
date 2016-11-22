@@ -1,26 +1,25 @@
 <?php
-require('views/RFZAView.php');
-require('models/RFZAModel.php');
+include_once 'controllers/controller.php';
+include_once 'view/abmView.php';
+include_once 'models/ABM_Model.php';
 
-class RFZAController
-{
-  private $vista;
-  private $modelo;
+class ABM_Controller extends Controller  {
 
-  function __construct()
-  {
-    $this->modelo = new RFZAModel();
-    $this->vista = new RFZAView();
+  function __construct() {
+      $this->vista = new AbmView();
+      $this->modelo = new ABM_Model();
+      session_start();
   }
 
-  function iniciar(){
-    $this->vista->mostrar();
-  }
   function abrir_abm(){
+    if (isset($_SESSION["email"])){
     $campeones = $this->modelo->getCampeones();
     $categorias = $this->modelo->getCategorias();
     $this->vista->mostrarAbm($campeones,$categorias);
   }
+  else {
+    header("Location: index.php");
+  }}
 
   function guardar(){
     if((isset($_POST['campeon']) && (isset($_POST['categoria'])) && (isset($_POST['categoria']) &&
@@ -91,18 +90,6 @@ class RFZAController
     $this->abrir_abm();
   }
 
-  function mostrarTabla(){
-    $campeones = $this->modelo->getCampeones();
-    $this->vista->mostrarTabla($campeones);
-  }
-
-  function filtrarTabla(){
-    $categoria = $_GET['id_categoria'];
-    $campeones = $this->modelo->getCampeonesPorCategoria($categoria);
-    $this->vista->mostrarTabla($campeones);
-  }
-
-
 }
 
- ?>
+?>
