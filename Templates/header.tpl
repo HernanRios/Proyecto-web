@@ -47,6 +47,7 @@
           <li><a href="abrir_abm" data-nombre-pagina="vacio.html">ABM</a></li>
           <li><a href="mostrar_login" data-nombre-pagina="vacio.html">Logueate!</a></li>
           <li><a href="mostrar_registrar" data-nombre-pagina="vacio.html">Registrate</a></li>
+          <li><a href="logout" data-nombre-pagina="vacio.html">logout</a></li>
           <li><a href="https://www.facebook.com/groups/rFzonal.arg/" target="_blank">Facebook</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->

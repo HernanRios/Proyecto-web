@@ -61,6 +61,20 @@ $(document).ready(function(){
         $('#tarea').val('');
       });}
 
+      $(".eliminarFoto").on("click", function(ev){
+        ev.preventDefault();
+        borrarFoto($(this).data("idfoto"));
+      });
+
+      function borrarFoto(id){
+        $.get("index.php?action=eliminar_foto&idfoto="+id, function(data) {
+          $(".fondo").html(data);
+          $('#tarea').val('');
+        });}
+
+
+
+
       function cargar_editorCategoriar(id){
         $.get("index.php?action=cargar_editorCategoria&idcategoria="+id, function(data) {
           $("#editorCategoria").html(data);
@@ -94,13 +108,12 @@ $(document).ready(function(){
 
       $(".btnFiltrarCategoria").on("click",function (ev){
         //ev.preventDefault();
-        alert($(this).data("filtro"));
-        filtrarCategorias($(this).data("idcampeonato"));
-        //filtrarCategorias($(this).data("filtro"));
+        var selected = $("#select option:selected" ).text();
+        filtrarCategorias(selected);
       });
 
       function filtrarCategorias(id){
-        $.get("index.php?action=filtrar_tabla&id_categoria="+ id, function(data) {
+        $.get("index.php?action=filtrar_tabla&idcategoria="+id, function(data) {
           alert(id);
           $("#mostrarTabla").html(data);
           $('#tarea').val('');

@@ -29,6 +29,10 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   $Login_Controller = new LoginController();
   $Login_Controller->login();
   break;
+  case ConfigApp::$ACTION_LOGOUT:
+  $Login_Controller = new LoginController();
+  $Login_Controller->logout();
+  break;
   case ConfigApp::$ACTION_GUARDAR_CAMPEON:
   $ABM_Controller = new ABM_Controller();
   $ABM_Controller->guardar();
@@ -44,6 +48,10 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_ELIMINAR_CAMPEON:
   $ABM_Controller = new ABM_Controller();
   $ABM_Controller->eliminarCampeon();
+  break;
+  case ConfigApp::$ACTION_ELIMINAR_FOTO:
+  $ABM_Controller = new ABM_Controller();
+  $ABM_Controller->eliminarFoto();
   break;
   case ConfigApp::$ACTION_ELIMINAR_CATEGORIA:
   $ABM_Controller = new ABM_Controller();

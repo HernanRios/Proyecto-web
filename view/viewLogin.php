@@ -6,7 +6,6 @@ class LoginView extends View {
 	function mostrarLogin(){
 		if(isset($_SESSION["email"])){
 			$this->smarty->assign('email', $_SESSION["email"]);
-			$this->smarty->assign('nombre', $_SESSION["nombre"]);
 		}
 		$this->smarty->assign('errores', $this->errores);
 		$this->smarty->display('login.tpl');

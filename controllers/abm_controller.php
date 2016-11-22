@@ -12,7 +12,7 @@ class ABM_Controller extends Controller  {
   }
 
   function abrir_abm(){
-    if (isset($_SESSION["email"])){
+    if ((isset($_SESSION["email"]))&&(($_SESSION["permiso"]>0))){
     $campeones = $this->modelo->getCampeones();
     $categorias = $this->modelo->getCategorias();
     $this->vista->mostrarAbm($campeones,$categorias);
@@ -57,6 +57,13 @@ class ABM_Controller extends Controller  {
     $this->modelo->eliminarCategoria($key);
     $this->abrir_abm();
   }
+
+  function eliminarFoto(){
+    $key = $_GET['idfoto'];
+    $this->modelo->eliminarFoto($key);
+    $this->abrir_abm();
+  }
+
 
   function cargarEditorCategoria(){
     $id_categoria = $_GET['idcategoria'];

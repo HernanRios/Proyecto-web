@@ -8,7 +8,7 @@ class NavController extends Controller  {
     function __construct() {
         $this->vista = new NavView();
         $this->model = new ABM_Model();
-        session_start();
+
     }
 
     function iniciar(){
@@ -21,8 +21,8 @@ class NavController extends Controller  {
     }
 
     function filtrarTabla(){
-      $categoria = $_GET['id_categoria'];
-      $campeones = $this->modelo->getCampeonesPorCategoria($categoria);
+      $categoria = $_GET['idcategoria'];
+      $campeones = $this->model->getCampeonesPorCategoria($categoria);
       $this->vista->mostrarTabla($campeones);
     }
 

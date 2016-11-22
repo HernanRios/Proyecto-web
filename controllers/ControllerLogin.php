@@ -10,6 +10,11 @@ class LoginController extends Controller {
     $this->view = new LoginView();
 
   }
+  function permisosInsuficientes()
+   {
+     $this->view->mostrarError("Permisos insuficientes");
+     $this->view->mostrarLogin();
+   }
 
   function login(){
 
@@ -20,17 +25,20 @@ class LoginController extends Controller {
       if (password_verify($password,$usuario[0]['pass'])){ //Si las pass coinciden
         session_start(); //inicia una sesion
         $_SESSION["email"] = $email;
-        $_SESSION["nombre"] = $usuario[0]["nombre"];
-        echo"VERIFICO";
-        header("Location: index.php?action=abrir_abm");
-        echo"VERIFICO";
+        $_SESSION["permiso"] = $usuario[0]['permiso'];
+        if($_SESSION["permiso"]>=1){
+          header("Location: abrir_abm");}
+        else {
+          header("Location: index.php");
+        }
       }else{
         if (isset($_SESSION["email"])){
-          echo "esta logueado";
+          if($_SESSION["permiso"]>0){
           $campeones=$this->model->getCampeones();
           $categorias=$this->model->getCategorias();
           $this->view->mostrarAbm($campeones,$categorias);
         }
+        else {permisosInsuficientes();}}
         else{
           $this->view->mostrarError("Datos de ingreso invalidos");
           $this->view->mostrarLogin();
@@ -38,6 +46,8 @@ class LoginController extends Controller {
       }
     }
   }
+
+
 
 
     function logout(){
@@ -59,7 +69,6 @@ class LoginController extends Controller {
   }
 
   function mostrarLogin(){
-    echo "entro aca";
     $this->view->mostrarLogin();
   }
 

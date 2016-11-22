@@ -102,5 +102,9 @@ class ABM_Model
      $insertImagen->execute(array($path,$id_campeonato));
   }}
 
+  function eliminarFoto($foto){
+    $sentencia = $this->db->prepare("delete from imagencampeonato where path=?");
+    $sentencia->execute(array($foto));
+  }
 }
 ?>

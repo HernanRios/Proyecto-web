@@ -11,6 +11,7 @@
       <select class="form-control selectpicker" data-style="btn-primary" name="categoria" >
         {foreach from=$categorias key=index item=categoria}
         <option value={$categoria['id_categoria']}>{$categoria['id_categoria']}</option>
+
         {/foreach}
       </select>
       <label for="grupo">Anio</label>
@@ -25,9 +26,9 @@
   </div>
   <div class="contenedor">
     <h1>Filtro por categoria</h1>
-    <select class="form-control selectpicker" data-style="btn-primary" name="categoria" >
+    <select class="form-control selectpicker"id="select" data-style="btn-primary" name="categoria" >
       {foreach from=$categorias key=index item=categoria}
-      <option data-filtro="1" value={$categoria['id_categoria']}>{$categoria['id_categoria']}</option>
+      <option id="filtroCategoria" value="{$categoria['id_categoria']}">{$categoria['id_categoria']}</option>
       {/foreach}
     </select>
      <button  class="btnFiltrarCategoria">Filtrar</button>
@@ -58,7 +59,9 @@
           <td><a class="cargar_editorCampeon" href="#" data-idcampeonato="{$campeon['id_campeonato']}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
           <th><ul>
           {foreach from=$campeon['imagenes'] key=index item=imagen}
-            <li><img src="{$imagen['path']}" alt="TareaImagen_{$campeon['campeon']}"  class="img-thumbnail"width="100" height="100"></li>
+            <li><img src="{$imagen['path']}" alt="TareaImagen_{$campeon['campeon']}"  class="img-thumbnail"width="100" height="100">
+              <a class="eliminarFoto" href="#" data-idfoto="{$imagen['path']}"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
+
             {/foreach}
           </ul> </td>
         </tr>

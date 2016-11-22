@@ -12,6 +12,7 @@ include_once 'models/Model.php';
       $consulta->execute(array($email));
       return $consulta ->fetchAll(PDO::FETCH_ASSOC);
   }
+  
 
   function crearUsuario($email,$pass){
     $sentencia = $this->db->prepare("INSERT INTO usuario(email,pass) VALUES(?,?)");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-17 21:23:12
+/* Smarty version 3.1.30, created on 2016-11-22 17:56:18
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\abm.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582e11b0d80204_83752563',
+  'unifunc' => 'content_583478b24be7e0_75803538',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9e4703e01f01d563ccb97d88eac3b1ccefcf289b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\abm.tpl',
-      1 => 1479412992,
+      1 => 1479833775,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_582e11b0d80204_83752563 (Smarty_Internal_Template $_smarty_tpl) {
+function content_583478b24be7e0_75803538 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -44,6 +44,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
         <option value=<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
 ><?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
 </option>
+
         <?php
 }
 }
@@ -63,14 +64,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
   </div>
   <div class="contenedor">
     <h1>Filtro por categoria</h1>
-    <select class="form-control selectpicker" data-style="btn-primary" name="categoria" >
+    <select class="form-control selectpicker"id="select" data-style="btn-primary" name="categoria" >
       <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['categorias']->value, 'categoria', false, 'index');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['categoria']->value) {
 ?>
-      <option data-filtro="1" value=<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
-><?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
+      <option id="filtroCategoria" value="<?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
+"><?php echo $_smarty_tpl->tpl_vars['categoria']->value['id_categoria'];?>
 </option>
       <?php
 }
@@ -123,7 +124,10 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
 ?>
             <li><img src="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['path'];?>
 " alt="TareaImagen_<?php echo $_smarty_tpl->tpl_vars['campeon']->value['campeon'];?>
-"  class="img-thumbnail"width="100" height="100"></li>
+"  class="img-thumbnail"width="100" height="100">
+              <a class="eliminarFoto" href="#" data-idfoto="<?php echo $_smarty_tpl->tpl_vars['imagen']->value['path'];?>
+"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
+
             <?php
 }
 }

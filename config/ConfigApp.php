@@ -4,6 +4,7 @@ class ConfigApp{
   public static $ACTION_GUARDAR_CAMPEON = 'guardar_campeon';
   public static $ACTION_ABRIR_ABM = 'abrir_abm';
   public static $ACTION_ELIMINAR_CAMPEON = 'eliminar_campeon';
+  public static $ACTION_ELIMINAR_FOTO = 'eliminar_foto';
   public static $ACTION_ELIMINAR_CATEGORIA = 'eliminar_categoria';
   public static $ACTION_GUARDAR_CATEGORIA = 'guardar_categoria';
   public static $ACTION_CARGAR_EDITORCATEGORIA = 'cargar_editorCategoria';
@@ -16,6 +17,7 @@ class ConfigApp{
   public static $ACTION_MOSTRAR_LOGIN = 'mostrar_login';
   public static $ACTION_MOSTRAR_REGISTRAR = 'mostrar_registrar';
   public static $ACTION_REGISTRAR = 'registrar';
+  public static $ACTION_LOGOUT = 'logout';
 
 }
 
