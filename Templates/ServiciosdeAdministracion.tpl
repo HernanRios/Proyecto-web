@@ -4,7 +4,7 @@
   <h2>Modificar Permisos</h2>
   <select class="form-control selectpicker" id="selectUsuario" data-style="btn-primary" name="categoria" >
     {foreach from=$usuarios key=index item=usuario}
-    <option value="{$usuario['email']}">{$usuario['email']}</option>
+    <option value="{$usuario['id']}">{$usuario['email']}</option>
     {/foreach}
   </select>
   <select class="" id="selectPermiso" name="usuario">

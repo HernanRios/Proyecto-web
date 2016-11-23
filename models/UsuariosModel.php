@@ -29,7 +29,9 @@ include_once 'models/Model.php';
   }
 
   function editarUsuario($usuario,$permiso){
-    $consulta = $this->db->prepare('UPDATE usuario SET permiso=?  WHERE id_usuario=?');
+    echo $usuario;
+    echo $permiso;
+    $consulta = $this->db->prepare("UPDATE usuario SET permiso=?  WHERE id=?");
     $consulta->execute(array($permiso,$usuario));
     echo $this->db->lastInsertId();
   }

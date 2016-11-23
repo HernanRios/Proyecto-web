@@ -35,8 +35,9 @@ class Usuarios_controller extends Controller {
     }
 
     function editarUsuario(){
+      echo "hubo un tiempo en que";
       if(isset($_GET['usuario']) && (isset($_GET['permiso']))){
-      $usuarios = $_GET['usuario'];
+      $usuario = $_GET['usuario'];
       $permiso = $_GET['permiso'];
       $this->model->editarUsuario($usuario,$permiso);
     }}

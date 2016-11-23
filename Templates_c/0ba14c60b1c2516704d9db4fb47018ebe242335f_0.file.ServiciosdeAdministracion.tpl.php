@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-23 01:25:43
+/* Smarty version 3.1.30, created on 2016-11-23 14:41:51
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\ServiciosdeAdministracion.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5834e2072dc283_50114134',
+  'unifunc' => 'content_58359c9f42c9d3_61457266',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0ba14c60b1c2516704d9db4fb47018ebe242335f' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\ServiciosdeAdministracion.tpl',
-      1 => 1479860739,
+      1 => 1479908505,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5834e2072dc283_50114134 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58359c9f42c9d3_61457266 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -35,7 +35,7 @@ $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->t
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['usuario']->value) {
 ?>
-    <option value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['email'];?>
+    <option value="<?php echo $_smarty_tpl->tpl_vars['usuario']->value['id'];?>
 "><?php echo $_smarty_tpl->tpl_vars['usuario']->value['email'];?>
 </option>
     <?php

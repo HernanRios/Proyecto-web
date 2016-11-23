@@ -2,7 +2,6 @@
 
 class ABM_Model
 {
-  private $tareas;
   private $db;
 
   function __construct()

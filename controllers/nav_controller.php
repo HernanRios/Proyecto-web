@@ -31,7 +31,6 @@ class NavController extends Controller  {
       $categorias = $this->model->getCategorias();
       session_start();
       $permiso = $_SESSION["email"];
-      echo $permiso;
       $this->vista->mostrarCampeones($campeones,$categorias,$permiso);
 
     }

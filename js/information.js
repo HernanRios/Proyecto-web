@@ -122,10 +122,9 @@ $(document).ready(function(){
       }
 
       $(".btnCambiarPermiso").on("click",function(ev){
-        var usuario = $("#selectUsuario option:selected").text();
+        var usuario = $("#selectUsuario option:selected").val();
         var permiso = $("#selectPermiso option:selected").val();
         alert(usuario);
-        alert(permiso);
         cambiarPermisos(usuario,permiso);
 
       });

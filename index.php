@@ -39,7 +39,7 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   break;
   case ConfigApp::$ACTION_CAMBIAR_PERMISOS:
   $Usuarios_Controller = new Usuarios_Controller();
-  $Usuarios_Controller->cambiarPermisos();
+  $Usuarios_Controller->editarUsuario();
   break;
   case ConfigApp::$ACTION_GUARDAR_CAMPEON:
   $ABM_Controller = new ABM_Controller();
