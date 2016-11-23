@@ -136,6 +136,40 @@ $(document).ready(function(){
         });
       }
 
+      function createComentarios(comentarios,id_campeonato){
+    $.ajax({ url: 'js/templates/comentarios.mst',
+    success: function(template) {
+      console.log(comentarios);
+      var rendered = Mustache.render(template,{comentario:comentarios});
+      alert(rendered);
+      $(".acaVaElcomentario"+id_campeonato).html(rendered);
+    }
+  });
+}
+
+$(".verComentario").on("click",function(ev){
+var id =  $(this).data("idcm");
+  comentariosAjax(id);
+
+});
+
+
+      //cargado de comentarios de la api
+function comentariosAjax(id_campeonato) {
+  $.ajax(
+    {
+      method:"GET",
+      dataType: "JSON",
+      url: "api/comentario/" +id_campeonato,
+      success:function(data) {
+        createComentarios(data,id_campeonato);
+      }
+    }
+
+  )
+}
+
+
 
 
 

@@ -25,28 +25,14 @@
           <td>{$campeon['subcampeon']}</td>
           <td>{$campeon['fk_id_categoria']}</td>
           <td>{$campeon['anio']}</td>
-          <td><ul>
+          <td>  <button type="button" class = "verComentario" data-idcm="{$campeon['id_campeonato']}" name="button">VERCOMENTRIO</button>
+            <ul>
             {foreach from=$campeon['imagenes'] key=index item=imagen}
               <li><img src="{$imagen['path']}" alt="TareaImagen_{$campeon['campeon']}"  class="img-thumbnail"width="100" height="100"></li>
             {/foreach}
           </ul></td>
-          <td><ul>
-          {foreach from=$campeon['comentarios'] key=index item=comentario}
-          <li>$comentario['comentario']</li>
-          {if isset($permiso)}
-          <td>
-              <select id="puntuarComentario">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-              </select>
-            <button type="button" name="button">Puntuar</button>
-          </td>
-          {/if}
-          {/foreach}
-          </ul></td>
+          <td><div class="acaVaElcomentario{$campeon['id_campeonato']}">
+          </div></td>
         </tr>
         {/foreach}
       </tbody>

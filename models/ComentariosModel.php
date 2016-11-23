@@ -11,6 +11,7 @@
     }
 
     function crearComentario($comentario) {
+      print_r($comentario);
         $sentencia = $this->db->prepare("INSERT INTO comentario(texto, puntaje, fk_id_usuario, fk_id_campeonato) VALUES(?,?,?,?)");
         $sentencia->execute(array($comentario["comentario"], $comentario["puntaje"], $comentario["id_usuario"], $comentario["id_campeonato"]));
         $id_comentario = $this->db->lastInsertId();

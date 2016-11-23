@@ -1,7 +1,7 @@
 
 <?php
 
-include_once 'models/Model.php';
+require_once(dirname(__DIR__) . '\models\Model.php');
 
   class UsuariosModel extends Model{
 

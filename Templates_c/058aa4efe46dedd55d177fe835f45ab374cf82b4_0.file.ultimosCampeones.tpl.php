@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-22 22:44:03
+/* Smarty version 3.1.30, created on 2016-11-24 00:03:33
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\ultimosCampeones.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_5834bc23ade988_31085798',
+  'unifunc' => 'content_58362045581314_87078654',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '058aa4efe46dedd55d177fe835f45ab374cf82b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\ultimosCampeones.tpl',
-      1 => 1479851040,
+      1 => 1479942210,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:footer.tpl' => 1,
   ),
 ),false)) {
-function content_5834bc23ade988_31085798 (Smarty_Internal_Template $_smarty_tpl) {
+function content_58362045581314_87078654 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
@@ -60,7 +60,9 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
 </td>
           <td><?php echo $_smarty_tpl->tpl_vars['campeon']->value['anio'];?>
 </td>
-          <td><ul>
+          <td>  <button type="button" class = "verComentario" data-idcm="<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
+" name="button">VERCOMENTRIO</button>
+            <ul>
             <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['campeon']->value['imagenes'], 'imagen', false, 'index');
 if ($_from !== null) {
@@ -76,32 +78,9 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
 ?>
 
           </ul></td>
-          <td><ul>
-          <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['campeon']->value['comentarios'], 'comentario', false, 'index');
-if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['comentario']->value) {
-?>
-          <li>$comentario['comentario']</li>
-          <?php if (isset($_smarty_tpl->tpl_vars['permiso']->value)) {?>
-          <td>
-              <select id="puntuarComentario">
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-              </select>
-            <button type="button" name="button">Puntuar</button>
-          </td>
-          <?php }?>
-          <?php
-}
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl);
-?>
-
-          </ul></td>
+          <td><div class="acaVaElcomentario<?php echo $_smarty_tpl->tpl_vars['campeon']->value['id_campeonato'];?>
+">
+          </div></td>
         </tr>
         <?php
 }
