@@ -1,7 +1,7 @@
 <?php
 include_once 'view/View.php';
 
-class viewRegistrar extends View {
+class UsuariosView extends View {
 
 	function mostrarRegistrar(){
 		$this->smarty->display('registrar.tpl');
@@ -11,5 +11,11 @@ class viewRegistrar extends View {
   {
     $this->smarty->assign('mensaje',$mensaje);
   }
+
+	function mostrarServicios($usuarios){
+		$this->smarty->assign('usuarios',$usuarios);
+		$this->smarty->display('ServiciosdeAdministracion.tpl');
+
+	}
 }
 ?>

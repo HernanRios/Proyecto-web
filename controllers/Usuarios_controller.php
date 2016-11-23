@@ -1,17 +1,15 @@
 <?php
 include_once 'controllers/controller.php';
-include_once 'view/viewRegistrar.php';
+include_once 'view/UsuariosView.php';
 include_once 'models/usuariosModel.php';
 
-class Registrar_controller extends Controller {
+class Usuarios_controller extends Controller {
 
   function __construct() {
     $this->model = new UsuariosModel();
-    $this->view = new viewRegistrar();
+    $this->view = new UsuariosView();
 
   }
-
-
 
   function mostrarRegistrar(){
     $this->view->mostrarRegistrar();
@@ -27,9 +25,21 @@ class Registrar_controller extends Controller {
       }
       }
     }
-  
 
+    function mostrarServicios(){
+      session_start();
+      if ($_SESSION['permiso']>1) {
+        $usuarios = $this->model->getUsuarios();
+        $this->view->mostrarServicios($usuarios);
+      }
+    }
 
+    function editarUsuario(){
+      if(isset($_GET['usuario']) && (isset($_GET['permiso']))){
+      $usuarios = $_GET['usuario'];
+      $permiso = $_GET['permiso'];
+      $this->model->editarUsuario($usuario,$permiso);
+    }}
 
 }
 

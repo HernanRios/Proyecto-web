@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-22 13:58:29
+/* Smarty version 3.1.30, created on 2016-11-23 00:24:55
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\header.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_583440f5779948_15059521',
+  'unifunc' => 'content_5834d3c7e615c2_18517506',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5a688aec39594e576eb472103677902a7481d11a' => 
     array (
       0 => 'C:\\xampp\\htdocs\\proyectos\\Proyecto\\templates\\header.tpl',
-      1 => 1479819414,
+      1 => 1479857089,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_583440f5779948_15059521 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5834d3c7e615c2_18517506 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <!DOCTYPE html>
 <!-- Esta es la pagina principal, la cual solo contiene el head y una parte del body: el body contiene la nav, el footer y un div,
@@ -69,13 +69,14 @@ function content_583440f5779948_15059521 (Smarty_Internal_Template $_smarty_tpl)
           <li class="navItem" data-nombre-pagina="contQuienesSomos.html"><a href="#" id="navQuienesSomos">Quienes Somos</a></li>
           <li><a>Noticias</a></li>
           <li ><a>Miembros</a></li>
-          <li id ="navUltimos"><a href="#">Ultimos Campeones</a></li>
+          <li ><a href="mostrar_campeones" data-nombre-pagina="vacio.html">Ultimos Campeones</a></li>
           <li class="navItem" data-nombre-pagina="contContacto.html"><a href="#">Contacto</a></li>
           <li><a href="#">Multimedia</a></li>
           <li><a href="abrir_abm" data-nombre-pagina="vacio.html">ABM</a></li>
           <li><a href="mostrar_login" data-nombre-pagina="vacio.html">Logueate!</a></li>
           <li><a href="mostrar_registrar" data-nombre-pagina="vacio.html">Registrate</a></li>
           <li><a href="logout" data-nombre-pagina="vacio.html">logout</a></li>
+          <li><a href="servicios_administracion" data-nombre-pagina="vacio.html">Servicios</a></li>
           <li><a href="https://www.facebook.com/groups/rFzonal.arg/" target="_blank">Facebook</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->

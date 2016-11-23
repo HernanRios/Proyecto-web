@@ -1,6 +1,7 @@
 $(document).ready(function(){
   cargarPagina("contIndex.html");//Con esta linea cargo lo que falta del Index.
 
+
   function cargarPagina(direccion){
     //Esta funcion carga la url pasada como parametro dentro del ID = "mostrador"
     $.ajax({            url: direccion,
@@ -118,7 +119,22 @@ $(document).ready(function(){
           $("#mostrarTabla").html(data);
           $('#tarea').val('');
         });
+      }
 
+      $(".btnCambiarPermiso").on("click",function(ev){
+        var usuario = $("#selectUsuario option:selected").text();
+        var permiso = $("#selectPermiso option:selected").val();
+        alert(usuario);
+        alert(permiso);
+        cambiarPermisos(usuario,permiso);
+
+      });
+
+      function cambiarPermisos(usuario,permiso){
+        $.get("index.php?action=cambiar_permisos&usuario="+usuario + "&permiso="+ permiso, function(data) {
+          $("#mostrarTabla").html(data);
+          $('#tarea').val('');
+        });
       }
 
 

@@ -41,13 +41,14 @@
           <li class="navItem" data-nombre-pagina="contQuienesSomos.html"><a href="#" id="navQuienesSomos">Quienes Somos</a></li>
           <li><a>Noticias</a></li>
           <li ><a>Miembros</a></li>
-          <li id ="navUltimos"><a href="#">Ultimos Campeones</a></li>
+          <li ><a href="mostrar_campeones" data-nombre-pagina="vacio.html">Ultimos Campeones</a></li>
           <li class="navItem" data-nombre-pagina="contContacto.html"><a href="#">Contacto</a></li>
           <li><a href="#">Multimedia</a></li>
           <li><a href="abrir_abm" data-nombre-pagina="vacio.html">ABM</a></li>
           <li><a href="mostrar_login" data-nombre-pagina="vacio.html">Logueate!</a></li>
           <li><a href="mostrar_registrar" data-nombre-pagina="vacio.html">Registrate</a></li>
           <li><a href="logout" data-nombre-pagina="vacio.html">logout</a></li>
+          <li><a href="servicios_administracion" data-nombre-pagina="vacio.html">Servicios</a></li>
           <li><a href="https://www.facebook.com/groups/rFzonal.arg/" target="_blank">Facebook</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->

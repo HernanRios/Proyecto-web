@@ -2,7 +2,7 @@
 include_once "controllers/ABM_Controller.php";
 include_once "controllers/controllerLogin.php";
 include_once "controllers/nav_controller.php";
-include_once "controllers/Registrar_controller.php";
+include_once "controllers/Usuarios_controller.php";
 require ('config/ConfigApp.php');
 
 
@@ -17,14 +17,6 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   $Login_Controller = new LoginController();
   $Login_Controller->Mostrarlogin();
   break;
-  case ConfigApp::$ACTION_MOSTRAR_REGISTRAR:
-  $Login_Controller = new registrar_Controller();
-  $Login_Controller->mostrarRegistrar();
-  break;
-  case ConfigApp::$ACTION_REGISTRAR:
-  $Login_Controller = new registrar_Controller();
-  $Login_Controller->registrarUsuario();
-  break;
   case ConfigApp::$ACTION_LOGIN:
   $Login_Controller = new LoginController();
   $Login_Controller->login();
@@ -32,6 +24,22 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_LOGOUT:
   $Login_Controller = new LoginController();
   $Login_Controller->logout();
+  break;
+  case ConfigApp::$ACTION_MOSTRAR_REGISTRAR:
+  $Usuarios_Controller = new Usuarios_Controller();
+  $Usuarios_Controller->mostrarRegistrar();
+  break;
+  case ConfigApp::$ACTION_REGISTRAR:
+  $Usuarios_Controller = new Usuarios_Controller();
+  $Usuarios_Controller->registrarUsuario();
+  break;
+  case ConfigApp::$ACTION_SERVICIOS_ADMINISTRACION:
+  $Usuarios_Controller = new Usuarios_Controller();
+  $Usuarios_Controller->mostrarServicios();
+  break;
+  case ConfigApp::$ACTION_CAMBIAR_PERMISOS:
+  $Usuarios_Controller = new Usuarios_Controller();
+  $Usuarios_Controller->cambiarPermisos();
   break;
   case ConfigApp::$ACTION_GUARDAR_CAMPEON:
   $ABM_Controller = new ABM_Controller();
@@ -80,6 +88,10 @@ switch ($_REQUEST[ConfigApp::$ACTION]) {
   case ConfigApp::$ACTION_FILTRAR_TABLA:
   $navController = new NavController();
   $navController->FiltrarTabla();
+  break;
+  case ConfigApp::$ACTION_MOSTRAR_CAMPEONES:
+  $navController = new NavController();
+  $navController->mostrarCampeones();
   break;
   default:
   $navController = new NavController();

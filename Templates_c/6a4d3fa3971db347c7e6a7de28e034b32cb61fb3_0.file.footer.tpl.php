@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.30, created on 2016-11-17 21:23:13
+/* Smarty version 3.1.30, created on 2016-11-22 18:48:34
   from "C:\xampp\htdocs\proyectos\Proyecto\templates\footer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.30',
-  'unifunc' => 'content_582e11b10b6b45_01924746',
+  'unifunc' => 'content_583484f2cf3208_00183588',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_582e11b10b6b45_01924746 (Smarty_Internal_Template $_smarty_tpl) {
+function content_583484f2cf3208_00183588 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <footer class="footer">
     <p class="texto">Copyright © 2016  Juan Martin Forte - Hernan Rios ® Todos los derechos reservados </p>

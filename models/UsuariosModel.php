@@ -12,7 +12,7 @@ include_once 'models/Model.php';
       $consulta->execute(array($email));
       return $consulta ->fetchAll(PDO::FETCH_ASSOC);
   }
-  
+
 
   function crearUsuario($email,$pass){
     $sentencia = $this->db->prepare("INSERT INTO usuario(email,pass) VALUES(?,?)");
@@ -20,6 +20,18 @@ include_once 'models/Model.php';
     $id_categoria = $this->db->lastInsertId();
     echo $id_categoria;
     return $id_categoria;
+  }
+
+  function getUsuarios(){
+    $consulta = $this->db->prepare("SELECT * FROM usuario");
+    $consulta->execute();
+    return $consulta->fetchAll(PDO::FETCH_ASSOC);
+  }
+
+  function editarUsuario($usuario,$permiso){
+    $consulta = $this->db->prepare('UPDATE usuario SET permiso=?  WHERE id_usuario=?');
+    $consulta->execute(array($permiso,$usuario));
+    echo $this->db->lastInsertId();
   }
 
 }

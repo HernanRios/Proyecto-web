@@ -16,8 +16,11 @@ class ConfigApp{
   public static $ACTION_LOGIN = 'login';
   public static $ACTION_MOSTRAR_LOGIN = 'mostrar_login';
   public static $ACTION_MOSTRAR_REGISTRAR = 'mostrar_registrar';
+  public static $ACTION_MOSTRAR_CAMPEONES = 'mostrar_campeones';
   public static $ACTION_REGISTRAR = 'registrar';
   public static $ACTION_LOGOUT = 'logout';
+  public static $ACTION_SERVICIOS_ADMINISTRACION = 'servicios_administracion';
+  public static $ACTION_CAMBIAR_PERMISOS = 'cambiar_permisos';
 
 }
 

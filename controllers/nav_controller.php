@@ -16,7 +16,7 @@ class NavController extends Controller  {
     }
 
     function mostrarTabla(){
-      $campeones = $this->modelo->getCampeones();
+      $campeones = $this->model->getCampeones();
       $this->vista->mostrarTabla($campeones);
     }
 
@@ -24,6 +24,16 @@ class NavController extends Controller  {
       $categoria = $_GET['idcategoria'];
       $campeones = $this->model->getCampeonesPorCategoria($categoria);
       $this->vista->mostrarTabla($campeones);
+    }
+
+    function mostrarCampeones(){
+      $campeones = $this->model->getCampeones();
+      $categorias = $this->model->getCategorias();
+      session_start();
+      $permiso = $_SESSION["email"];
+      echo $permiso;
+      $this->vista->mostrarCampeones($campeones,$categorias,$permiso);
+
     }
 
 }

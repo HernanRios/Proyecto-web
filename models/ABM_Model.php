@@ -53,6 +53,8 @@ class ABM_Model
     $campeones = $sentencia->fetchAll(PDO::FETCH_ASSOC);
     foreach ($campeones as $key => $campeon) {
       $campeones[$key]['imagenes']=$this->getImagenes($campeon['id_campeonato']);}
+      foreach ($campeones as $key => $campeon) {
+        $campeones[$key]['comentarios']=$this->getComentarios($campeon['id_campeonato']);}
     return $campeones;
   }
 
@@ -61,6 +63,12 @@ class ABM_Model
       $sentencia->execute(array($id_campeonato));
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    function getComentarios($id_campeonato){
+        $sentencia = $this->db->prepare( "select * from comentario where fk_id_campeonato=?");
+        $sentencia->execute(array($id_campeonato));
+        return $sentencia->fetchAll(PDO::FETCH_ASSOC);
+      }
 
   function getCategorias(){
     $sentencia = $this->db->prepare( "select * from categoria");
