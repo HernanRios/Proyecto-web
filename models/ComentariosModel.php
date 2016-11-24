@@ -31,9 +31,9 @@
       return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 
-  function getComentario($id_comentario){
-    $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE id_comentario = ?");
-    $sentencia->execute(array($id_comentario));
+  function getComentario($id_campeonato){
+    $sentencia = $this->db->prepare("SELECT * FROM comentario WHERE fk_id_campeonato = ?");
+    $sentencia->execute(array($id_campeonato));
     return $sentencia->fetchAll(PDO::FETCH_ASSOC);
   }
 

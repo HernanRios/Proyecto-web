@@ -29,9 +29,8 @@ class NavController extends Controller  {
     function mostrarCampeones(){
       $campeones = $this->model->getCampeones();
       $categorias = $this->model->getCategorias();
-      session_start();
-      $permiso = $_SESSION["email"];
-      $this->vista->mostrarCampeones($campeones,$categorias,$permiso);
+      print_r($categorias);
+      $this->vista->mostrarCampeones($campeones,$categorias);
 
     }
 

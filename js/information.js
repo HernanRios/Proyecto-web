@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+  var reloj;
   cargarPagina("contIndex.html");//Con esta linea cargo lo que falta del Index.
 
 
@@ -37,6 +39,8 @@ $(document).ready(function(){
       }
     });
   });
+
+
 
   $(".eliminarCampeon").on("click", function(ev){
     ev.preventDefault();
@@ -100,7 +104,6 @@ $(document).ready(function(){
 
       function cargarTabla(categoria){
         $.post("index.php?action=mostrar_tabla", function(data) {
-          alert("carg");
           $("#mostrarTabla").html(data);
           $('#tarea').val('');
         });
@@ -115,7 +118,6 @@ $(document).ready(function(){
 
       function filtrarCategorias(id){
         $.get("index.php?action=filtrar_tabla&idcategoria="+id, function(data) {
-          alert(id);
           $("#mostrarTabla").html(data);
           $('#tarea').val('');
         });
@@ -124,7 +126,6 @@ $(document).ready(function(){
       $(".btnCambiarPermiso").on("click",function(ev){
         var usuario = $("#selectUsuario option:selected").val();
         var permiso = $("#selectPermiso option:selected").val();
-        alert(usuario);
         cambiarPermisos(usuario,permiso);
 
       });
@@ -139,9 +140,7 @@ $(document).ready(function(){
       function createComentarios(comentarios,id_campeonato){
     $.ajax({ url: 'js/templates/comentarios.mst',
     success: function(template) {
-      console.log(comentarios);
       var rendered = Mustache.render(template,{comentario:comentarios});
-      alert(rendered);
       $(".acaVaElcomentario"+id_campeonato).html(rendered);
     }
   });
@@ -149,25 +148,29 @@ $(document).ready(function(){
 
 $(".verComentario").on("click",function(ev){
 var id =  $(this).data("idcm");
-  comentariosAjax(id);
-
+setInterval(comentariosAjax(id),2000);
 });
 
 
-      //cargado de comentarios de la api
-function comentariosAjax(id_campeonato) {
-  $.ajax(
-    {
-      method:"GET",
-      dataType: "JSON",
-      url: "api/comentario/" +id_campeonato,
-      success:function(data) {
-        createComentarios(data,id_campeonato);
-      }
-    }
 
-  )
-}
+
+  function comentariosAjax(id_campeonato) {
+    $.ajax(
+      {
+        method:"GET",
+        dataType: "JSON",
+        url: "api/comentario/" +id_campeonato,
+        success:function(data) {
+          createComentarios(data,id_campeonato);
+        }
+      }
+
+    )
+  }
+
+
+
+
 
 
 
