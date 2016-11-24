@@ -155,6 +155,7 @@ setInterval(comentariosAjax(id),2000);
 
 
   function comentariosAjax(id_campeonato) {
+    setTimeout(function(){
     $.ajax(
       {
         method:"GET",
@@ -165,7 +166,7 @@ setInterval(comentariosAjax(id),2000);
         }
       }
 
-    )
+    )},2000);
   }
 
 

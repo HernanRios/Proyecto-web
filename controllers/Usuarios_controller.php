@@ -1,7 +1,9 @@
 <?php
 include_once 'controllers/controller.php';
 include_once 'view/UsuariosView.php';
+include_once 'view/NavView.php';
 include_once 'models/usuariosModel.php';
+
 
 class Usuarios_controller extends Controller {
 
@@ -28,10 +30,13 @@ class Usuarios_controller extends Controller {
 
     function mostrarServicios(){
       session_start();
+      if(isset($_SESSION['permiso'])){
       if ($_SESSION['permiso']>1) {
         $usuarios = $this->model->getUsuarios();
         $this->view->mostrarServicios($usuarios);
-      }
+      }}
+      $navView = new NavView();
+      $navView->mostrarHome();
     }
 
     function editarUsuario(){

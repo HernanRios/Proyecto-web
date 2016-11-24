@@ -36,12 +36,13 @@ class ComentriosApi extends ApiBase {
        case 'POST':
            if(count($argumentos)==0){
              session_start();
-             if($_SESSION["permiso"]>0){
              $error['Error'] = "El comentario no se creo";
+             if (isset($_SESSION['permiso'])){
+             if($_SESSION["permiso"]>0){
              $id_comentario = $this->model->crearComentario($_POST);//comentario,puntaje,id_usuario,id_campeonato
-             return ($id_comentario > 0) ? json_encode($this->model->getcomentario($id_comentario)) : $error;}
+             return ($id_comentario > 0) ? json_encode($this->model->getcomentario($id_comentario)) : $error;}}
              else {
-               return json_encode("no tiene los permisos necesarios");
+               return json_encode($error);
              }
            }
          break;
